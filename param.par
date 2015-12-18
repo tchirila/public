@@ -1,0 +1,22 @@
+synth
+standard_out	'stdout'
+summary_out	'sumout'
+smoother_out	'smoout'
+model_in	'amm03cp03op03t4750g25v20.mod'
+lines_in	'linelist.201306191000.vac'
+observed_in	'aspcapStar-r5-v603-2M00103483+7045218.fits'
+terminal	'xterm'
+atmosphere	1
+molecules	2
+lines		1
+flux/int	0
+plot		2
+abundances	1    3
+	8	-0.5	0.0	0.5
+synlimits
+  15100.0  17000.0   0.02   1.00
+obspectrum	1
+plotparts	1
+  15100.0  17000.0   0.50  1.00
+      0.0    0.000  0.000  1.00
+        g     0.25   0.00  0.00  0.00  0.00
