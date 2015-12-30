@@ -2,7 +2,7 @@
 import os
 
 atmlist = []
-path = "scratch//asttchir//apogee//apogeework//apogee//spectro//redux//speclib//kurucz_filled"
+path = "//scratch//asttchir//apogee//apogeework//apogee//spectro//redux//speclib//kurucz_filled"
 for file in os.listdir(path):
     if file.endswith(".mod"):
         atmlist.append(file)
