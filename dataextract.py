@@ -1,8 +1,9 @@
-# extracts values from files (excel)
+# extracts values from files (excel) in windows
 import xlrd
 
 list = []
-test = xlrd.open_workbook('D:\\Program Files\\Anaconda Python 2.7\\projects\\filetest\\data\\data1.xlsx')
+path = '\\path1\\path2\\data1.xlsx' # in linux it should be / instead of \\
+test = xlrd.open_workbook(path)
 testsheet = test.sheet_by_index(0)
 r = testsheet.row(0) #returns all the CELLS of row 0,
 c = testsheet.col_values(0) #returns all the VALUES of row 0, 
