@@ -1,4 +1,4 @@
-#extracts values from files (excel)
+# extracts values from files (excel)
 import xlrd
 
 list = []
