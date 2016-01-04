@@ -1,10 +1,12 @@
 # writes the filename into a parameter file
 path = "D:\\Program Files\\Dropbox\\Python\\atmlist.txt"
 path2 = "D:\\Program Files\\Dropbox\\Python\\m4500m075_Si+025.par"
+
 with open(path) as atmfile:
     atmdata = atmfile.read()
     atmlist = atmdata.split() # each .mod name has 28 characters including the '.mod' part
     n = int(1+len(atmlist)) # calculates nr. of elements and converts string to integer
+    
     for i in range(0, n, 1):
         modelatm = atmlist[i]
         param = modelatm[0:24]
