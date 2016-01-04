@@ -7,7 +7,7 @@ with open(path) as atmfile:
     atmlist = atmdata.split() # each .mod name has 28 characters including the '.mod' part
     n = int(1+len(atmlist)) # calculates nr. of elements and converts string to integer
     
-    for i in range(0, n, 1):
+    for i in range(0, n, 1): # iterates for each element(.mod file) of the list
         modelatm = atmlist[i]
         param = modelatm[0:24]
         t = modelatm[14:18]
