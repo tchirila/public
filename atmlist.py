@@ -6,6 +6,7 @@ atmlist = []
 path = "/scratch/asttchir/apogee/apogeework/apogee/spectro/redux/speclib/kurucz_filled"
 for path, dirnames, filenames in os.walk(path):
     for file in [f for f in filenames if f.endswith(".mod")]:
+        file = os.path.join(path, file)
         atmlist.append(file)        
 outfile = open('atmlist.txt','w')
 for name in atmlist:    
@@ -22,6 +23,8 @@ path = "/scratch/asttchir/apogee/apogeework/apogee/spectro/redux/speclib/kurucz_
 for path, dirnames, filenames in os.walk(path):
     
     for file in [f for f in filenames if f.endswith(".mod")]:
+        
+        file = os.path.join(path, file)
     
         atmlist.append(file)        
 
