@@ -1,6 +1,6 @@
 # writes the filename into a parameter file
-path = "D:\\Program Files\\Dropbox\\Python\\atmlist.txt"
-path2 = "D:\\Program Files\\Dropbox\\Python\\m4500m075_Si+025.par"
+path = "/scratch/asttchir/apogee/specwork/atmlist.txt"
+path2 = "/scratch/asttchir/apogee/specwork/m4500m075_Si+025.par"
 
 with open(path) as atmfile:
     atmdata = atmfile.read()
