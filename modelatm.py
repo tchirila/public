@@ -9,6 +9,7 @@ for t in range(3500, 6250, 250):
 
 # new version, not tested yet
 from apogee.modelatm import atlas9
+import sys
 try:
     for t in range(3500, 6250, 250):
         for x in range(0, 55, 5):
@@ -17,4 +18,4 @@ try:
                 m = y/10.0
                 atm= atlas9.Atlas9Atmosphere(teff=t,logg=g,metals=m,am=0.25,cm=0.25)
 except KeyError:
-    pass
+    sys.exc_clear()
