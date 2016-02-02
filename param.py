@@ -53,8 +53,6 @@ with open(path) as atmfile:
                 
                     if line.strip() == 'standard_out   out1_s4500g20m075_sip025': 
                         paramfile.write('standard_out   out1_s'+t+g+m+'_al'+'\n')
-                    elif line.strip() == 'summary_out    out2_s4500g20m075_sip025': 
-                        paramfile.write('summary_out    out2_s'+t+g+m+'_al'+'\n')
                     elif line.strip() == 'iraf_out       s4500g20m075_sip025.txt': 
                         paramfile.write('iraf_out       s'+t+g+m+'_al.txt'+'\n')
                     elif line.strip() == "model_in      'amm08cp00op00t4500g20v20.moog'":
