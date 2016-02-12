@@ -32,3 +32,4 @@ with open(listpath) as atmfile:
     input('awk -f mod2moog '+str(oldpath)+' > '+newpath+str(name)+'.moog')
 
 # /home/asttchir/Dropbox/Python/converter.py
+# /home/asttchir/Dropbox/Python/trigger.py
