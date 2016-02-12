@@ -1,4 +1,4 @@
-# downloads all files within parameter range (all combinations), use python2.7
+# downloads all files within parameter range (all combinations), use python2.7, run in specwork folder
 from apogee.modelatm import atlas9
 import sys
 
