@@ -29,7 +29,7 @@ with open(listpath) as atmfile:
         name = fullatmname[0:24]
         newpath = '/scratch/asttchir/modelatm/'
     
-    input('awk -f mod2moog '+str(oldpath)+' > '+newpath+str(name)+'.moog')
+    os.system("gnome-terminal -e 'awk -f mod2moog '+str(oldpath)+' > '+newpath+str(name)+'.moog'")
 
 # /home/asttchir/Dropbox/Python/converter.py
 # /home/asttchir/Dropbox/Python/trigger.py
