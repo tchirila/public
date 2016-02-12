@@ -14,10 +14,10 @@ for t in range(3500, 6750, 250):
                 atm= atlas9.Atlas9Atmosphere(teff=t,logg=g,metals=m,am=0.25,cm=0.25)
                 count = count+1
             except IOError as errIO:
-                logfile.write('Error encountered: '+str(errIO)+'/n')
+                logfile.write('Error encountered: '+str(errIO)+'\n')
                 sys.exc_clear()
             except IndexError as errIdx:
-                logfile.write('Error encountered: '+str(errIdx)+'/n')
+                logfile.write('Error encountered: '+str(errIdx)+'\n')
                 sys.exc_clear()
 
 logfile.write('Number of downloaded atmospheres is: '+str(count))
