@@ -1,15 +1,15 @@
-# writes the filename into a parameter file
+# writes the filename into a parameter file, run in paramfiles
 path = "/scratch/asttchir/specwork/atmlist.txt"
 path2 = "/scratch/asttchir/specwork/template_Al.par"
 
 with open(path) as atmfile:
     atmdata = atmfile.read()
-    atmlist = atmdata.split() # each .mod name has 28 characters including the '.mod' part
+    atmlist = atmdata.split() # each .moog name has 29 characters including the '.mod' part
     n = int(len(atmlist)) # calculates nr. of elements and converts string to integer
  
-    for i in range(0, n, 1): # iterates for each element(.mod file) of the list    
+    for i in range(0, n, 1): # iterates for each element(.moog file) of the list    
         atmpath = atmlist[i]
-        modelatm = atmpath[-28:]
+        modelatm = atmpath[-29:]
         param = modelatm[0:24]
         t = modelatm[14:18]
         g = 'g'+modelatm[19:21]
