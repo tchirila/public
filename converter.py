@@ -5,12 +5,12 @@ import os.path
 atmlist = []
 path = "/scratch/asttchir/modelatm_kurucz"
 
-for i in range(0, 0):
+for i in range(0, 1, 1):
     for path, dirnames, filenames in os.walk(path):
         for file in [f for f in filenames if f.endswith(".mod")]:
             file = os.path.join(path, file)
             atmlist.append(file)        
-    outfile = open('/scratch/asttchir/specwork/atmlist_kurucz.txt','w')
+    outfile = open('atmlist_kurucz.txt','w')
 
     for name in atmlist:    
         outfile.write(name+'\n')    
@@ -29,7 +29,8 @@ with open(listpath) as atmfile:
         name = fullatmname[0:24]
         newpath = '/scratch/asttchir/modelatm/'
     
-    os.system("gnome-terminal -e 'awk -f mod2moog '+str(oldpath)+' > '+newpath+str(name)+'.moog'")
+    input = ('awk -f mod2moog '+str(oldpath)+' > '+newpath+str(name)+'.moog')
+    input = (' ')
 
 # /home/asttchir/Dropbox/Python/converter.py
 # /home/asttchir/Dropbox/Python/trigger.py
