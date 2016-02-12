@@ -5,7 +5,7 @@ import os.path
 atmlist = []
 path = "/scratch/asttchir/modelatm"
 for path, dirnames, filenames in os.walk(path):
-    for file in [f for f in filenames if f.endswith(".mod")]:
+    for file in [f for f in filenames if f.endswith(".moog")]:
         file = os.path.join(path, file)
         atmlist.append(file)        
 outfile = open('atmlist.txt','w')
