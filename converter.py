@@ -1,4 +1,5 @@
-# converts kurucz model atmospheres using the awk script
+# First half creates a list of modelatm paths
+# Second half uses the list from the 1st half to convert kurucz model atmospheres using the awk script
 import os
 import os.path
 
@@ -27,10 +28,7 @@ with open(listpath) as atmfile:
         oldpath = atmlist[i]
         fullatmname = oldpath[-28:]
         name = fullatmname[0:24]
-        newpath = '/scratch/asttchir/modelatm/'
-    
-    input = ('awk -f mod2moog '+str(oldpath)+' > '+newpath+str(name)+'.moog')
-    input = (' ')
+        newpath = '/scratch/asttchir/modelatm/'+str(name)+'.moog'
+        os.system("gnome-terminal -e 'bash -c \"awk -f mod2moog %s > %s\"'" % (oldpath, newpath))
 
 # /home/asttchir/Dropbox/Python/converter.py
-# /home/asttchir/Dropbox/Python/trigger.py
