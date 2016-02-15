@@ -1,4 +1,4 @@
-# Writes the template parameter file, run in the specwork folder
+# Writes the template parameter file
 with open('/scratch/asttchir/specwork/template_Al.par', 'w') as par:            
     par.write('synth\n'
               'terminal       xterm\n'
