@@ -1,5 +1,5 @@
-# Writes the template parameter file
-with open('template_Al.par', 'w') as par:            
+# Writes the template parameter file, run in the specwork folder
+with open('/scratch/asttchir/specwork/template_Al.par', 'w') as par:            
     par.write('synth\n'
               'terminal       xterm\n'
               'plot           0\n'
@@ -8,17 +8,17 @@ with open('template_Al.par', 'w') as par:
               'iraf_out       iraf.txt\n'
               'damping        0\n'
               'strong         1\n'
-              "stronglines_in   '../stronglines.vac'\n" # change
+              "stronglines_in   '/scratch/asttchir/specwork/stronglines.vac'\n"
               "model_in      'model.mod'\n"
-              "lines_in      '../linelist.201306191000.vac.moog'\n" # change
+              "lines_in      '/scratch/asttchir/specwork/moog.201312161124.vac'\n"
               'atmosphere     1\n'
               'molecules      1\n'
               'lines          0\n'
               'iraf           1\n'
               'flux/int       0\n'
               'isotopes   17     1\n'
-              'abundances     1     2\n' # change to nr. of abundances
-              '  13       -1.20   -0.90\n' # add Al abundances
+              'abundances     1     5\n'
+              '  13       -1.20   -0.90   -0.60   -0.30   0.00\n'
               'synlimits\n'
               '15000.0     17000.0     0.10     0.30\n'
               'obspectrum     0\n'
