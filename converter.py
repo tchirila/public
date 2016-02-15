@@ -1,4 +1,4 @@
-# First half creates a list of modelatm paths
+# First half creates a list of modelatm paths, run in specwork (where the awk script file is)
 # Second half uses the list from the 1st half to convert kurucz model atmospheres using the awk script
 import os
 import os.path
@@ -11,7 +11,7 @@ for i in range(0, 1, 1):
         for file in [f for f in filenames if f.endswith(".mod")]:
             file = os.path.join(path, file)
             atmlist.append(file)        
-    outfile = open('atmlist_kurucz.txt','w')
+    outfile = open('/scratch/asttchir/specwork/atmlist_kurucz.txt','w')
 
     for name in atmlist:    
         outfile.write(name+'\n')    
