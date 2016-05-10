@@ -7,12 +7,12 @@ mu = 0.2;            % sets mu
 tau = 0.2;           % sets tau
 dx = 1/(Nx-1);       % grip-spacing, equation provided by question description
 dtau = mu*dx^2;      % equation provided by question description
+Ntau = tau*((1/dtau)+1); % number of time steps, equation provided by question description
 x = 0:dx:1;          % sets every x value
 t = 0:dtau:1;        % sets every t value
 U = ones(length(t), Nx); % creates a matrix of ones
-U(1,:) = 1;          % sets the values of all elements to 1
-U(:,length(x)) = 0;  % outer boundary condition
-Ntau = tau*((1/dtau)+1); % equation provided by question description
+U(1,:) = 1;          % inital condition, temperature is 1
+U(:,length(x)) = 0;  % outer boundary condition where temperature is 0
 a = 1e4;             % radius in meters
 thdif = 1e-6;        % thermal diffusivity in meters^2 per seconds
 
@@ -22,8 +22,8 @@ for i = 2:Ntau               % the following lines calculate the diffusion
         U(i,j) = (1-2*mu*(1+(1/(j-1))))*U(i-1,j)+(mu*U(i-1,j-1)+(mu*(1+(2/(j-1))))*U(i-1,j+1));
     end
     
-    if U(i,1) <= 0.14 % checks for half temperature
-        break
+    if U(i,1) <= 0.5 % checks for half temperature
+        break  % breaks the loop, the plot will start from 0.5 temperature
     end
     time = i*dtau;
     t_total = ((time*a^2)/thdif)/(3600*24*365) % total time in years
